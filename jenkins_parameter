@@ -11,18 +11,19 @@ password(name: 'SERVER_PWD', description:  'Enter your server password')
 stages{
 stage('BUILD') {
 steps {
-echo"NAME ${params.NAME}"
-sh "echo $params.NAME}"
+echo "NAME ${params.NAME}"
+sh "echo $ {params.NAME}"
 sh 'sleep 5'
 }
 }
 stage('TEST') {
 steps {
-sh'echo this is my second stage'
+sh '''
+echo this is my second stage
 sleep 5
 du -h 
 '''
 }
 }
 }
-}
+
