@@ -1,0 +1,21 @@
+pipeline {
+agent any
+parameters {
+string (name:'NAME ', description: 'Enter your name')
+text (name: 'DESCRIPTION', description:'Enter details')
+booleanparam(name:'BOOL', description :'Enter yes/no ')
+choice (name:'CHOOSE BRANCH', choices:['master', 'feature','hotfix'],description :'enter branch')
+choice (name:'CHOICE ENV', choices:['TEST', 'QA','PROD'],description: 'enter environment to deploy')
+password(name:'SERVER_PWD', description:'Enter your server password')
+}
+stages{
+stage('BUILD') {
+environment {
+STAGE_NAME ='build'
+}
+steps {
+sh'echo this is my first stage"
+sh 'ls-lrt'
+}
+}
+}
