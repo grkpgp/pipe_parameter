@@ -14,7 +14,7 @@ environment {
 STAGE_NAME ='build'
 }
 steps {
-sh'echo this is my first stage"
+sh'echo this is my first stage'
 sh 'ls-lrt'
 }
 }
